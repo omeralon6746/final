@@ -84,31 +84,42 @@ Villarreal
 חטאפה*************
 Levante
 
-Chievo Verona
-Fiorentina
 AC Milan
 AS Roma
 Atalanta
+Benevento
 Bologna
 Cagliari
+Chievo Verona
 Crotone
-Internazionale
+Fiorentina
 Genoa
+Internazionale
 Juventus
-Napoli
 Lazio
-Torino
+Napoli
 Sampdoria
-Udinese
 Sassuolo
-Benevento
 SPAL
+Torino
+Udinese
 ורונה*****************
 
-PEC Zwolle
+Ajax Amsterdam
+AZ Alkmaar
+Excelsior
+FC Twente
 FC Utrecht
+NAC Breda
+PEC Zwolle
+PSV Eindhoven
+Roda JC Kerkrade
+SC Heracles Almelo
+Sparta Rotterdam
+VVV Venlo
+Willem II Tilburg
 
-Sporting CP
 Belenenses
-FC Porto
 Benfica
+FC Porto
+Sporting CP
