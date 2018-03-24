@@ -20,6 +20,19 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 def login():
     return render_template('login_screen.html')
 
+
+@app.route('/register', methods=['GET', 'POST'])
+def not_registered():
+    """"If the user is not registered,
+        send him to the registration page."""
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def new_user_details():
+    """"If the user is not registered,
+        send him to the registration page."""
+
+
 app.run()
 
 
