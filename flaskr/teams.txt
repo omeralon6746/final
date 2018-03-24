@@ -1,0 +1,148 @@
+﻿
+Premier League
+AFC Bournemouth
+Arsenal
+Burnley
+Brighton & Hove Albion
+Chelsea
+Crystal Palace
+Everton
+Huddersfield Town
+Leicester City
+Liverpool
+Manchester City
+Manchester United
+Newcastle United
+Southampton
+Stoke City
+Swansea City
+Tottenham Hotspur
+Watford
+West Bromwich Albion
+West Ham United
+
+German Bundesliga
+Bayer Leverkusen
+Bayern Munich
+Borussia Dortmund
+Borussia Monchengladbach
+Eintracht Frankfurt
+FC Augsburg
+FC Cologne
+Hamburg SV
+Hannover 96
+Hertha Berlin
+Mainz
+RB Leipzig
+SC Freiburg
+Schalke 04
+TSG Hoffenheim
+VfB Stuttgart
+VfL Wolfsburg
+Werder Bremen
+
+French Ligue 1
+Angers
+AS Monaco
+Bordeaux
+Caen
+Dijon FCO
+Guingamp
+Lille
+Lyon
+Marseille
+Metz
+Montpellier
+Nantes
+Nice
+Paris Saint-Germain
+SC Amiens
+Stade Rennais
+St Etienne
+Strasbourg
+Toulouse
+Troyes
+
+Spanish Primera Division
+Alav\u00e9s
+Athletic Bilbao
+Atletico Madrid
+Barcelona
+Celta Vigo
+Deportivo La Coru\u00f1a
+Eibar
+Espanyol
+Getafe
+Girona
+Las Palmas
+Leganes
+Levante
+Málaga-M\u00e1laga
+Real Betis
+Real Madrid
+Real Sociedad
+Sevilla FC
+Valencia
+Villarreal
+
+Italian Serie A
+AC Milan
+AS Roma
+Atalanta
+Benevento
+Bologna
+Cagliari
+Chievo Verona
+Crotone
+Fiorentina
+Genoa
+Hellas Verona
+Internazionale
+Juventus
+Lazio
+Napoli
+Sampdoria
+Sassuolo
+SPAL
+Torino
+Udinese
+
+Dutch Eredivisie
+ADO Den Haag
+Ajax Amsterdam
+AZ Alkmaar
+Excelsior
+FC Groningen
+FC Twente
+FC Utrecht
+Feyenoord Rotterdam
+Heerenveen
+NAC Breda
+PEC Zwolle
+PSV Eindhoven
+Roda JC Kerkrade
+SC Heracles Almelo
+Sparta Rotterdam
+Vitesse Arnhem
+VVV Venlo
+Willem II Tilburg
+
+Portuguese Liga
+Belenenses
+Benfica
+Boavista
+Braga
+Desportivo Aves
+Estoril
+FC Porto
+Feirense
+GD Chaves
+Guimaraes
+Maritimo
+Moreirense
+Pa\u00e7os de Ferreira
+Portimonense
+Rio Ave
+Sporting CP
+Tondela
+Vitoria Setubal
