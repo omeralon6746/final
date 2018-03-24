@@ -1,0 +1,145 @@
+- !!python/unicode 'omer':
+  - Arsenal
+  - Chelsea
+  - Liverpool
+  - Manchester City
+  - Manchester United
+  - Bayern Munich
+  - Barcelona
+  - Real Madrid
+- !!python/unicode '1':
+  - AFC Bournemouth
+  - Arsenal
+  - Burnley
+  - Chelsea
+  - Crystal Palace
+  - Everton
+  - Hull City
+  - Leicester City
+  - Liverpool
+  - Manchester City
+  - Manchester United
+  - Middlesbrough
+  - Southampton
+  - Stoke City
+  - Sunderland
+  - Swansea City
+  - Tottenham Hotspur
+  - Watford
+  - West Bromwich Albion
+  - West Ham United
+- !!python/unicode '2':
+  - Bayer Leverkusen
+  - Borussia Dortmund
+  - Borussia Monchengladbach
+  - Eintracht Frankfurt
+  - FC Augsburg
+  - Bayern Munich
+  - Schalke 04
+  - FC Ingolstadt 04
+  - FC Cologne
+  - Mainz
+  - Hamburg SV
+  - Hertha Berlin
+  - RB Leipzig
+  - SC Freiburg
+  - SV Darmstadt 98
+  - TSG Hoffenheim
+  - VfL Wolfsburg
+  - Werder Bremen
+- !!python/unicode '3':
+  - Angers
+  - AS Monaco
+  - AS Nancy Lorraine
+  - St Etienne
+  - Dijon FCO
+  - Guingamp
+  - Bordeaux
+  - Lorient
+  - Metz
+  - Nantes
+  - Montpellier
+  - Nice
+  - Marseille
+  - Lyon
+  - Lille
+  - Paris Saint-Germain
+  - Bastia
+  - Caen
+  - Stade Rennais
+  - Toulouse
+- !!python/unicode '4':
+  - Athletic Bilbao
+  - Osasuna
+  - Leganes
+  - Atletico Madrid
+  - Alav\u00e9s
+  - Barcelona
+  - Granada
+  - !!python/str "M\xE1laga"
+  - Celta Vigo
+  - Deportivo La Coru\u00f1a
+  - Espanyol
+  - Real Betis
+  - Real Madrid
+  - Real Sociedad
+  - Eibar
+  - Sevilla FC
+  - !!python/str "Sporting Gij\xF3n"
+  - Las Palmas
+  - Valencia
+  - Villarreal
+- !!python/unicode '5':
+  - Chievo Verona
+  - Fiorentina
+  - AC Milan
+  - AS Roma
+  - Atalanta
+  - Bologna
+  - Cagliari
+  - Empoli
+  - Crotone
+  - Internazionale
+  - Genoa
+  - Juventus
+  - US Pescara
+  - Napoli
+  - Lazio
+  - Torino
+  - Sampdoria
+  - Udinese
+  - Palermo
+- !!python/unicode 'l':
+  - Liverpool
+- !!python/unicode 'chen':
+  - Liverpool
+  - Manchester United
+- !!python/unicode 'or':
+  - Crystal Palace
+  - Chelsea
+  - Burnley
+  - Everton
+  - Hull City
+  - Leicester City
+  - Liverpool
+- !!python/unicode '2018':
+  - Liverpool
+  - Manchester City
+  - Manchester United
+  - Chelsea
+  - Arsenal
+  - Tottenham Hotspur
+- !!python/unicode 'itay':
+  - Liverpool
+  - Borussia Monchengladbach
+- !!python/unicode 'denis':
+  - Crystal Palace
+  - RB Leipzig
+  - Villarreal
+- !!python/unicode 'it':
+  - West Ham United
+  - West Bromwich Albion
+  - Schalke 04
+- !!python/unicode 'galniv':
+  - Chelsea
+  - Leicester City
