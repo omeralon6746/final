@@ -6,7 +6,7 @@ Program Version: 1.0.0
 """
 import yaml
 import information_server
-from team_codes import *
+from teams_dict import *
 import datetime
 
 

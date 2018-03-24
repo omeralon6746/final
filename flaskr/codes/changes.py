@@ -6,7 +6,7 @@ Program Version: 1.0.0
 """
 
 
-from team_codes import *
+from teams_dict import *
 
 
 class Changes(object):

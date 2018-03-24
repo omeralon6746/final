@@ -9,7 +9,7 @@ import changes
 import time
 import calendar
 import datetime
-from team_codes import *
+from teams_dict import *
 
 
 class InformationSource(object):
