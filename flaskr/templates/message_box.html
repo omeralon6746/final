@@ -6,8 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='util.css') }}">
+<script>
+function myFunction() {
+    alert("Wrong Username or Password!");
+}
+</script>
 </head>
-<body>
+<body onload="myFunction()">
 
 	<div class="limiter">
 		<div class="container-login100">
@@ -24,7 +29,7 @@
 						<input class="input100" type="text" name="username" >
 						<span class="focus-input100"></span>
 					</div>
-					
+
 					<span class="txt1 p-b-11">
 						Password
 					</span>

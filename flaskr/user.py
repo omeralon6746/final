@@ -10,16 +10,23 @@ from teams_dict import *
 import datetime
 
 
-USERS_DATA = "users.yaml"
+USERS_DATA = "C:/final/flaskr/database/users.yaml"
 
 
 class User(object):
-    def __init__(self, username):
+    def __init__(self, username, password):
         """Set the class's attributes."""
         self.__username = username
+        self.__password = password
         self.__teams = []
         self.__user_matches = []
         self.__information_source = information_server.InformationSource()
+
+    def set_username(self, username):
+        self.__username = username
+
+    def set_password(self, password):
+        self.__password = password
 
     def set_teams(self, picked_teams):
         """Set the teams' attribute and update the users file.
@@ -31,30 +38,52 @@ class User(object):
         """
         self.__teams = picked_teams
         with open(USERS_DATA, "a") as users_data:
-            yaml.dump([{self.__username: picked_teams}],
+            yaml.dump([{[self.__username, self.__password]: picked_teams}],
                       users_data, default_flow_style=False)
 
-    def check_username(self):
-        """
-        Check if the username already exists in one of the saves.
-        If it exists, restore the user's team to the team's attribute.
+    def locate_username(self):
+        with open(USERS_DATA, "r") as users_file:
+            users = yaml.load(users_file)
+            if users:
+                for user in users:
+                    if self.__username in user.keys()[0][0]:
+                        return user
+
+    def check_details(self):
+        """Check if the username or password already exists in one of the saves.
 
 
         Returns:
             check_exist - A bool that indicates if the username exists or not.
         """
-        check_exist = False
+        if self.locate_username() or self.locate_password():
+            return True
+        return False
+
+    def match_password(self):
+        user = self.locate_username()
+        if user:
+            if self.__password in user.keys()[0][1]:
+                return True
+        return False
+
+    def locate_password(self):
         with open(USERS_DATA, "r") as users_file:
             users = yaml.load(users_file)
             if users:
                 for user in users:
-                    if self.__username in user.keys():
-                        # restore the user's teams
-                        for value in user.values():
-                            for team in value:
-                                self.__teams.append(team)
-                        check_exist = True
-        return check_exist
+                    if self.__password in user.keys()[0][1]:
+                        return user
+
+    def load_teams(self):
+        """Restore the user's team to the teams' attribute.
+
+        """
+        user = self.locate_username()
+        for value in user.values():
+            for team in value:
+                self.__teams.append(team)
+        print self.__teams
 
     def get_changes_categorized(self):
         """Get all the changes that found.
