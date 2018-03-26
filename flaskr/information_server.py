@@ -10,9 +10,11 @@ import time
 import calendar
 import datetime
 from teams_dict import *
+from global_constants import *
 
 
 class InformationSource(object):
+
     LIVE_RESULTS_API = "http://soccer-cli.appspot.com/"
     OTHER_INFO_API = "http://api.football-data.org/v1/"
     HEADERS = {"X-Auth-Token": "7796fc8dfc6740048cf8ebb80c3f3108"}
@@ -51,7 +53,7 @@ class InformationSource(object):
         """
         try:
             matches = requests.get(self.LIVE_RESULTS_API,
-                                   headers=InformationSource.HEADERS).json()
+                                   headers=self.HEADERS).json()
         except ValueError:
             return self.get_live_matches()
         # filter the live matches
@@ -59,7 +61,7 @@ class InformationSource(object):
                               match.values() and
                               FINAL_TIME not in match.values()]
         for match in self.__last_scores:
-            del match["league"]
+            del match[LEAGUE]
         return self.__last_scores
 
     @staticmethod
@@ -121,7 +123,7 @@ class InformationSource(object):
             return InformationSource.get_team_matches(team)
         # sleep time because of the request limit on the information server
         try:
-            return team_matches["fixtures"]
+            return team_matches[FIXTURES]
         except KeyError:
             time.sleep(50)
             return InformationSource.get_team_matches(team)

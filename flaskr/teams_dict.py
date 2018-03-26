@@ -282,13 +282,3 @@ TEAM_CODES = {"VfL Wolfsburg": 11,
               "Palermo": 114,
               "Alav\u00e9s": 263,
               "VfB Stuttgart": 10}
-
-# in case they change the names in the API
-HOME = "homeTeamName"
-AWAY = "awayTeamName"
-HOME_GOALS = "goalsHomeTeam"
-AWAY_GOALS = "goalsAwayTeam"
-DATE = "date"
-TIME = "time"
-MATCHES = "games"
-FINAL_TIME = "FT"

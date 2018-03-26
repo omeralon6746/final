@@ -6,7 +6,7 @@ Program Version: 1.0.0
 """
 
 
-from teams_dict import *
+from global_constants import *
 
 
 class Changes(object):
@@ -61,16 +61,16 @@ class Changes(object):
                         new_goals.append(live_match)
                         # add "homeGoal" and "awayGoal" labels in order
                         # to know which team has scored
-                        new_goals[index]["homeGoal"] = True
+                        new_goals[index][HOME_NEW_GOAL] = True
                         if live_match[AWAY_GOALS] != match[AWAY_GOALS]:
-                            new_goals[index]["awayGoal"] = True
+                            new_goals[index][AWAY_NEW_GOAL] = True
                         else:
-                            new_goals[index]["awayGoal"] = False
+                            new_goals[index][AWAY_NEW_GOAL] = False
                         index += 1
                     elif live_match[AWAY_GOALS] != match[AWAY_GOALS]:
                         new_goals.append(live_match)
-                        new_goals[index]["awayGoal"] = True
-                        new_goals[index]["homeGoal"] = False
+                        new_goals[index][AWAY_NEW_GOAL] = True
+                        new_goals[index][HOME_NEW_GOAL] = False
                         index += 1
         return new_goals
 

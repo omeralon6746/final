@@ -1,0 +1,18 @@
+
+# global constants
+HOME = "homeTeamName"
+AWAY = "awayTeamName"
+HOME_GOALS = "goalsHomeTeam"
+AWAY_GOALS = "goalsAwayTeam"
+HOME_NEW_GOAL = "homeNewGoal"
+AWAY_NEW_GOAL = "awayNewGoal"
+DATE = "date"
+TIME = "time"
+MATCHES = "games"
+FINAL_TIME = "FT"
+STATUS = "status"
+FINISHED = "FINISHED"
+POSTPONED = "POSTPONED"
+RESULT = "result"
+LEAGUE = "league"
+FIXTURES = "fixtures"

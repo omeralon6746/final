@@ -6,14 +6,15 @@ Program Version: 1.0.0
 """
 import yaml
 import information_server
-from teams_dict import *
 import datetime
-
-
-USERS_DATA = "C:/final/flaskr/database/users.yaml"
+from teams_dict import *
+from global_constants import *
 
 
 class User(object):
+
+    USERS_DATA = "database/users.yaml"
+
     def __init__(self, username, password):
         """Set the class's attributes."""
         self.__username = username
@@ -37,16 +38,24 @@ class User(object):
             that the user chose to follow on.
         """
         self.__teams = picked_teams
-        with open(USERS_DATA, "a") as users_data:
+        with open(self.USERS_DATA, "a") as users_data:
             yaml.dump([{[self.__username, self.__password]: picked_teams}],
                       users_data, default_flow_style=False)
 
     def locate_username(self):
-        with open(USERS_DATA, "r") as users_file:
+        """Find the current user in the database by his username
+
+
+        Returns:
+            user - A dictionary that contains the
+            username and password of the user (key) and
+            the user's followed teams (value)
+        """
+        with open(self.USERS_DATA, "r") as users_file:
             users = yaml.load(users_file)
             if users:
                 for user in users:
-                    if self.__username in user.keys()[0][0]:
+                    if self.__username == user.keys()[0][0]:
                         return user
 
     def check_details(self):
@@ -54,36 +63,48 @@ class User(object):
 
 
         Returns:
-            check_exist - A bool that indicates if the username exists or not.
+            A bool that indicates if the username/password exist or not.
         """
         if self.locate_username() or self.locate_password():
             return True
         return False
 
     def match_password(self):
+        """Check if the user is exist int the database,
+           meaning that the username is matching the password
+
+
+        Returns:
+            A bool that indicates if the username match the password
+        """
         user = self.locate_username()
         if user:
-            if self.__password in user.keys()[0][1]:
+            if self.__password == user.keys()[0][1]:
                 return True
         return False
 
     def locate_password(self):
-        with open(USERS_DATA, "r") as users_file:
+        """Find the current user in the database by his password
+
+
+        Returns:
+            user - A dictionary that contains the
+            username and password of the user (key) and
+            the user's followed teams (value)
+        """
+        with open(self.USERS_DATA, "r") as users_file:
             users = yaml.load(users_file)
             if users:
                 for user in users:
-                    if self.__password in user.keys()[0][1]:
+                    if self.__password == user.keys()[0][1]:
                         return user
 
     def load_teams(self):
-        """Restore the user's team to the teams' attribute.
-
-        """
+        """Restore the user's team to the teams' attribute."""
         user = self.locate_username()
         for value in user.values():
             for team in value:
                 self.__teams.append(team)
-        print self.__teams
 
     def get_changes_categorized(self):
         """Get all the changes that found.
@@ -145,7 +166,7 @@ class User(object):
             A list that contains the user teams' finished matches.
         """
         finished_matches = [match for match in self.get_all_matches() if
-                            match["status"] == "FINISHED"]
+                            match[STATUS] == FINISHED]
         for i in xrange(len(finished_matches)):
             finished_matches[i] = User.choose_information(finished_matches[i])
         return User.check_in_live(finished_matches, live)
@@ -161,8 +182,8 @@ class User(object):
             A list that contains the user teams' future matches.
         """
         future_matches = [match for match in self.get_all_matches() if
-                          None in match["result"].values() and
-                          match["status"] != "POSTPONED"]
+                          None in match[RESULT].values() and
+                          match[STATUS] != POSTPONED]
         for i in xrange(len(future_matches)):
             future_matches[i] = User.choose_information(future_matches[i])
         return User.check_in_live(future_matches, live)
@@ -201,8 +222,8 @@ class User(object):
                            the given match without the Unnecessary values.
         """
         edited_match = {DATE: match[DATE],
-                        HOME_GOALS: match["result"][HOME_GOALS],
-                        AWAY_GOALS: match["result"][AWAY_GOALS]}
+                        HOME_GOALS: match[RESULT][HOME_GOALS],
+                        AWAY_GOALS: match[RESULT][AWAY_GOALS]}
         try:
             edited_match[HOME] = TEAMS_DICT[match[HOME]]
         except KeyError:

@@ -6,20 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='util.css') }}">
-<script>
-function myFunction() {
-    alert("Wrong Username or Password!");
-}
-</script>
 </head>
-<body onload="myFunction()">
+<body>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form action="/check_user" method="post" class="login100-form validate-form flex-sb flex-w">
+				<form action="/new_user_details" method="post" class="login100-form validate-form flex-sb flex-w">
 					<span class="login100-form-title p-b-32">
-						Account Login
+						Register
 					</span>
 
 					<span class="txt1 p-b-11">
@@ -29,7 +24,7 @@ function myFunction() {
 						<input class="input100" type="text" name="username" >
 						<span class="focus-input100"></span>
 					</div>
-
+					
 					<span class="txt1 p-b-11">
 						Password
 					</span>
@@ -42,8 +37,8 @@ function myFunction() {
 					</div>
 
                     <div class="flex-sb-m w-full p-b-48">
-                        <a href="#" class="txt3">
-                            Not Registered?
+                        <a href="/" class="txt3">
+                            Already have an account?
                         </a>
                     </div>
 
