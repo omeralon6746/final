@@ -1,5 +1,5 @@
 ﻿
-Premier League
+Premier League:
 AFC Bournemouth
 Arsenal
 Burnley
@@ -20,8 +20,7 @@ Tottenham Hotspur
 Watford
 West Bromwich Albion
 West Ham United
-
-German Bundesliga
+German Bundesliga:
 Bayer Leverkusen
 Bayern Munich
 Borussia Dortmund
@@ -40,8 +39,7 @@ TSG Hoffenheim
 VfB Stuttgart
 VfL Wolfsburg
 Werder Bremen
-
-French Ligue 1
+French Ligue 1:
 Angers
 AS Monaco
 Bordeaux
@@ -62,8 +60,7 @@ St Etienne
 Strasbourg
 Toulouse
 Troyes
-
-Spanish Primera Division
+Spanish Primera Division:
 Alav\u00e9s
 Athletic Bilbao
 Atletico Madrid
@@ -77,15 +74,14 @@ Girona
 Las Palmas
 Leganes
 Levante
-Málaga-M\u00e1laga
+M\u00e1laga
 Real Betis
 Real Madrid
 Real Sociedad
 Sevilla FC
 Valencia
 Villarreal
-
-Italian Serie A
+Italian Serie A:
 AC Milan
 AS Roma
 Atalanta
@@ -106,8 +102,7 @@ Sassuolo
 SPAL
 Torino
 Udinese
-
-Dutch Eredivisie
+Dutch Eredivisie:
 ADO Den Haag
 Ajax Amsterdam
 AZ Alkmaar
@@ -126,8 +121,7 @@ Sparta Rotterdam
 Vitesse Arnhem
 VVV Venlo
 Willem II Tilburg
-
-Portuguese Liga
+Portuguese Liga:
 Belenenses
 Benfica
 Boavista

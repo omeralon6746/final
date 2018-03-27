@@ -5,6 +5,7 @@ Date: 20/02/17
 Program Version: 1.0.0
 """
 import user
+import information_server
 import ctypes
 import os
 from flask import Flask, request, session, g, redirect, url_for, abort, \
@@ -16,7 +17,7 @@ LOGIN_PAGE = "login_screen.html"
 LOGIN_BOX = "login_box.html"
 REGISTER_PAGE = "registration_screen.html"
 REGISTER_BOX = "registration_box.html"
-TEAM_SELECTION_PAGE = "team_selection_screen"
+TEAM_SELECTION_PAGE = "team_selection_screen.html"
 HOME_PAGE = "home_screen"
 GET = "GET"
 POST = "POST"
@@ -75,7 +76,17 @@ def new_user_details():
     if my_user.check_details():
         return render_template(REGISTER_BOX)
     else:
-        return render_template(TEAM_SELECTION_PAGE)
+        all_teams = information_server.InformationSource.get_all_teams()
+        return render_template(TEAM_SELECTION_PAGE, my_list=all_teams)
+
+
+@app.route('/set_user_teams', methods=[GET, POST])
+def set_user_teams():
+    """Get the teams that the user chose and set the teams' attribute."""
+    chosen_teams = []
+    for team in request.form:
+        chosen_teams.append(team)
+    my_user.set_teams(chosen_teams)
 
 
 def set_user(username, password):

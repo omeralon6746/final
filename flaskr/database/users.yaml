@@ -1,10 +1,13 @@
 - ? !!python/tuple
-  - omer
-  - '6746778'
-  : - liv
-    - hta
+  - !!python/unicode 'omer'
+  - !!python/unicode '6746778'
+  : - Liverpool
+    - Barcelona
+
 - ? !!python/tuple
-  - nir
-  - yon
-  : - liv
-    - hta
+  - !!python/unicode 'nir'
+  - !!python/unicode 'yon'
+  : - Deportivo La Coru\u00f1a
+    - M\u00e1laga
+    - Pa\u00e7os de Ferreira
+    - Alav\u00e9s

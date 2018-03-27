@@ -39,7 +39,7 @@ class User(object):
         """
         self.__teams = picked_teams
         with open(self.USERS_DATA, "a") as users_data:
-            yaml.dump([{[self.__username, self.__password]: picked_teams}],
+            yaml.dump([{(self.__username, self.__password): picked_teams}],
                       users_data, default_flow_style=False)
 
     def locate_username(self):
@@ -55,6 +55,7 @@ class User(object):
             users = yaml.load(users_file)
             if users:
                 for user in users:
+                    print user.keys()[0][0]
                     if self.__username == user.keys()[0][0]:
                         return user
 

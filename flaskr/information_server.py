@@ -18,6 +18,7 @@ class InformationSource(object):
     LIVE_RESULTS_API = "http://soccer-cli.appspot.com/"
     OTHER_INFO_API = "http://api.football-data.org/v1/"
     HEADERS = {"X-Auth-Token": "7796fc8dfc6740048cf8ebb80c3f3108"}
+    TEAMS_FILE = "database/teams.txt"
 
     def __init__(self):
         """Set the class's attributes."""
@@ -66,15 +67,15 @@ class InformationSource(object):
 
     @staticmethod
     def get_all_teams():
-        """Get all the available teams from the teams' file.
+        """Get all the available teams with the leagues names from the teams' file.
 
 
         Returns:
             teams - A list that contains the available teams.
         """
-        with open("teams.txt") as teams_list:
+        with open(InformationSource.TEAMS_FILE) as teams_list:
             for i, team in enumerate(teams_list.read().splitlines()):
-                if team and i != 0:
+                if i != 0:
                     yield team
 
     @staticmethod
