@@ -6,6 +6,7 @@ Program Version: 1.0.0
 """
 import user
 import information_server
+from teams_dict import *
 import ctypes
 import os
 from flask import Flask, request, session, g, redirect, url_for, abort, \
@@ -77,6 +78,7 @@ def new_user_details():
         return render_template(REGISTER_BOX)
     else:
         all_teams = information_server.InformationSource.get_all_teams()
+        all_teams = search_special(all_teams)
         return render_template(TEAM_SELECTION_PAGE, my_list=all_teams)
 
 
@@ -100,6 +102,15 @@ def set_user(username, password):
     my_user.set_username(username)
     my_user.set_password(password)
 
+
+def search_special(teams_list):
+    new_teams_list = []
+    for team in teams_list:
+        if team in SPECIAL_NAMES.keys():
+            new_teams_list.append(SPECIAL_NAMES[team])
+        else:
+            new_teams_list.append(team)
+    return new_teams_list
 
 app.run()
 

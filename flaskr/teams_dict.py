@@ -282,3 +282,9 @@ TEAM_CODES = {"VfL Wolfsburg": 11,
               "Palermo": 114,
               "Alav\u00e9s": 263,
               "VfB Stuttgart": 10}
+
+
+SPECIAL_NAMES = {"Alav\u00e9s": u"Alav\u00e9s",
+              "M\xc3\xa1laga": u"M\xc3\xa1laga",
+              "Deportivo La Coru\u00f1a": u"Deportivo La Coru\u00f1a",
+              "Pa\u00e7os de Ferreira": u"Pa\u00e7os de Ferreira"}
