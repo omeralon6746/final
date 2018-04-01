@@ -7,7 +7,7 @@ Program Version: 1.0.0
 import yaml
 import information_server
 import datetime
-from teams_dict import *
+from teams_data import *
 from global_constants import *
 
 
@@ -55,7 +55,6 @@ class User(object):
             users = yaml.load(users_file)
             if users:
                 for user in users:
-                    print user.keys()[0][0]
                     if self.__username == user.keys()[0][0]:
                         return user
 
