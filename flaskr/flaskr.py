@@ -79,7 +79,7 @@ def check_user():
     # check if the user exists in the database
     if my_user.match_password():
         my_user.load_teams()
-        return render_template("try.html", tryit=my_user)
+        return render_template(LOADING_PAGE, tryit=my_user)
     # present an error message box.
     else:
         return render_template(LOGIN_BOX)
@@ -120,14 +120,13 @@ def set_user_teams():
     for team in request.form:
         chosen_teams.append(team)
     my_user.set_teams(chosen_teams)
-    return render_template("try.html", tryit=my_user)
+    return render_template(LOADING_PAGE, tryit=my_user)
 
 
 @app.route('/home', methods=[GET, POST])
 def home():
     """Send him to the registration page."""
     global finished, live, future
-    print request.form
     for x in request.form:
         print x
     finished, live, future = my_user.get_matches_categorized()
