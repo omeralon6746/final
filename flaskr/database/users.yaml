@@ -1,13 +1,39 @@
 - ? !!python/tuple
   - !!python/unicode 'omer'
-  - !!python/unicode '6746778'
+  - !!python/unicode 'alon'
   : - Liverpool
-    - Barcelona
-
+- ? !!python/tuple
+  - !!python/unicode 'ran'
+  - !!python/unicode 'dom'
+  : - RB Leipzig
+    - Boavista
+    - Athletic Bilbao
+    - Villarreal
+    - Bayer Leverkusen
+    - Moreirense
 - ? !!python/tuple
   - !!python/unicode 'nir'
   - !!python/unicode 'yon'
-  : - Deportivo La Coru\u00f1a
-    - M\u00e1laga
-    - Pa\u00e7os de Ferreira
-    - Alav\u00e9s
+  : - "Alav\xE9s"
+    - "Deportivo La Coru\xF1a"
+    - "M\xE1laga"
+    - "Pa\xE7os de Ferreira"
+- ? !!python/tuple
+  - !!python/unicode 'o'
+  - !!python/unicode 'a'
+  : - Brighton & Hove Albion
+- ? !!python/tuple
+  - !!python/unicode 'amit'
+  - !!python/unicode 'lazar'
+  : - AFC Bournemouth
+- ? !!python/tuple
+  - !!python/unicode 'champions'
+  - !!python/unicode 'league'
+  : - Real Madrid
+    - Bayern Munich
+    - Liverpool
+    - AS Roma
+- ? !!python/tuple
+  - !!python/unicode 'chen'
+  - !!python/unicode '2891'
+  : - Manchester United

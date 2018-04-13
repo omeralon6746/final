@@ -29,6 +29,14 @@ class User(object):
     def set_password(self, password):
         self.__password = password
 
+    @property
+    def get_teams(self):
+        return self.__teams
+
+    @property
+    def get_username(self):
+        return self.__username
+
     def set_teams(self, picked_teams):
         """Set the teams' attribute and update the users file.
 
@@ -37,10 +45,19 @@ class User(object):
             picked_teams - A list that contains the teams
             that the user chose to follow on.
         """
+        found_user = False
         self.__teams = picked_teams
-        with open(self.USERS_DATA, "a") as users_data:
-            yaml.dump([{(self.__username, self.__password): picked_teams}],
-                      users_data, default_flow_style=False)
+        with open(self.USERS_DATA, "r") as users_file:
+            users = yaml.load(users_file)
+        for user in users:
+            if user.keys() == [(self.__username, self.__password)]:
+                user[(self.__username, self.__password)] = self.__teams
+                found_user = True
+        if not found_user:
+            users.append({(self.__username, self.__password): self.__teams})
+
+        with open(self.USERS_DATA, "w") as users_data:
+            yaml.dump(users, users_data, default_flow_style=False)
 
     def locate_username(self):
         """Find the current user in the database by his username
@@ -53,10 +70,10 @@ class User(object):
         """
         with open(self.USERS_DATA, "r") as users_file:
             users = yaml.load(users_file)
-            if users:
-                for user in users:
-                    if self.__username == user.keys()[0][0]:
-                        return user
+        if users:
+            for user in users:
+                if self.__username == user.keys()[0][0]:
+                    return user
 
     def check_details(self):
         """Check if the username or password already exists in one of the saves.
@@ -169,7 +186,8 @@ class User(object):
                             match[STATUS] == FINISHED]
         for i in xrange(len(finished_matches)):
             finished_matches[i] = User.choose_information(finished_matches[i])
-        return User.check_in_live(finished_matches, live)
+        finished_matches = User.check_in_live(finished_matches, live)
+        return sorted(finished_matches, key=lambda fixture: fixture[DATE], reverse=True)
 
     def get_future_matches(self, live):
         """Get only the future matches.

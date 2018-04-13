@@ -143,6 +143,20 @@ class InformationSource(object):
         timestamp = calendar.timegm(timestamp.timetuple())
         return datetime.datetime.fromtimestamp(timestamp)
 
+    @staticmethod
+    def organize_info(matches):
+        new_order = []
+        for match in matches:
+            try:
+                match_time = match[TIME]
+            except KeyError:
+                match_time = match[DATE].strftime("%d.%m at %H:%M")
+            home = match[HOME]
+            score = "%s - %s" % (match[HOME_GOALS], match[AWAY_GOALS])
+            away = match[AWAY]
+            new_order.append([match_time, home, score, away])
+        return new_order
+
     @property
     def last_scores(self):
         """Get the last scores."""

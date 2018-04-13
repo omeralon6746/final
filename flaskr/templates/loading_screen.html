@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #999;
+        }
+
+        .content {
+        width: 100vw;
+        height: 100vh;
+        background: #444;
+        }
+
+        h2 {
+        text-transform: uppercase;
+        animation: pulse 3s linear 0s infinite alternate;
+        }
+
+        @keyframes pulse {
+        from { opacity: 1; }
+        to { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body onload="document.getElementById('myForm').submit();">
+<form action="/home" method="post" id="myForm">
+    <div class="loader">
+        <h2>Loading</h2>
+    </div>
+    <div class="content"></div>
+    <input type="hidden" name="{{tryit}}">
+</form>
+</body>
+</html>

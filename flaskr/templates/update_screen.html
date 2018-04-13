@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='table.css') }}">
+    <title></title>
+</head>
+{% block content %}
+<body onload="setTimeout(myFunction, 5000);">
+<form action="/show_update&notnew" method="post" id="myForm">
+    <h1 style="color: blue; margin-top: 30px; margin-left: 30px;">{{message}}</h1>
+    <table align="center">
+        <tr>
+            {% for info in match %}
+            <td>{{info}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</form>
+<script>
+function myFunction() {
+    document.getElementById('myForm').submit();
+}
+</script>
+</body>
+{% endblock %}
+</html>

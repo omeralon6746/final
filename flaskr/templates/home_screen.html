@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='table.css') }}">
+    <style>
+        body {margin:0;}
+
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        }
+
+        .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+        .navbar a:hover {
+        background: #ddd;
+        color: black;
+        }
+
+        .main {
+        padding: 16px;
+        margin-top: 30px;
+        height: 1500px; /* Used in this example to enable scrolling */
+        }
+    </style>
+</head>
+{% block content %}
+<body onload="setTimeout(myFunction, 6000);">
+<form action="/show_update" method="post" id="myForm">
+<div class="navbar">
+    <a href="show_live">Live Matches</a>
+    <a href="show_future">Future Matches</a>
+    <a href="show_finished">Finished Matches</a>
+    <a href="team_selection_screen">Change Team Selections</a>
+    <a href="/">Log Out</a>
+</div>
+
+<div class="main">
+    {% if not message %}
+    <h1 align="center" style="color: red; margin-top: 30px;">{{type}}</h1>
+    <table align="center" style="border-spacing: 5px;">
+        {% for match in matches %}
+        <tr>
+            {% for info in match %}
+            <td>{{info}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1 style="color: red">{{message}}</h1>
+    {% endif %}
+</div>
+</form>
+<script>
+function myFunction() {
+    document.getElementById('myForm').submit();
+}
+</script>
+</body>
+{% endblock %}
+</html>
